@@ -34,7 +34,13 @@ const marquee = new Marquee('.className')
 
 // init with element
 const element = document.querySelector('.marquee')
-const marquee = new Marquee(element)
+const options = {
+  initialOffset: false, // initial offset of marquee sign. `false` will mean that we should use default behavior of egstad/marquee
+  mode: 'toLeft', // 'toLeft' | 'toRight' - use intersectionObserver and reset marquee when sign has left the screen. 'leftRight' | 'rightLeft' – change direction when sign is about to reach out of screen
+  speed: 0.5, // pixels moved per animation frame
+  delay: 1500 // delay in ms for 'leftRight' and 'rightLeft' modes for when direction is changing
+}
+const marquee = new Marquee(element, options)
 ```
 
 ### Methods
